@@ -1,0 +1,38 @@
+
+# BEGIN Brute Force Login Protection
+<Files "*">
+order deny,allow
+deny from 78.1.91.99
+deny from 24.46.194.29
+deny from 98.156.94.232
+deny from 202.142.65.175
+deny from 190.166.252.43
+deny from 5.13.228.222
+deny from 5.12.194.203
+deny from 109.186.97.84
+deny from 85.105.172.162
+deny from 46.214.82.86
+deny from 81.83.0.181
+deny from 212.50.29.170
+deny from 73.49.80.181
+deny from 91.137.174.155
+deny from 175.157.86.146
+deny from 116.88.102.110
+deny from 190.214.109.59
+deny from 176.205.78.192
+deny from 87.69.221.164
+deny from 189.183.133.76
+</Files>
+# END Brute Force Login Protection
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
